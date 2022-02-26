@@ -1,0 +1,8 @@
+# virtual environment
+venv/
+.env
+
+# vim
+tags
+*.vim
+*.swp
