@@ -1,0 +1,3 @@
+export API_TOKEN="your_api_token"
+export USER_AGENT="spongeBob@pineapple.me"
+export WORKSPACE_ID=000000
