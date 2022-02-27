@@ -3,6 +3,8 @@ from datetime import datetime, timezone
 
 import requests
 
+DEEP_WORK_TAG = "Deep Work"
+
 
 def get_data():
     """Connect to toggl API to fetch the ongoing time."""
@@ -37,7 +39,7 @@ def run():
         print("· ⚠️  No tracking time")
         return
     start = data["start"]
-    description = data["description"]
+    description = data.get("description", "No description")
 
     # Calculate elapsed time
     hour_part, minute_part = elapsed(start)
@@ -46,7 +48,12 @@ def run():
     if minute_part < 10:
         minute_part = f"0{minute_part}"
 
-    print(f"· ⌛ {description}: {hour_part}h {minute_part}'")
+    # Classify the entry as deep work
+    tags = data.get("tags", list())
+    if DEEP_WORK_TAG in tags:
+        print(f"· [🎯 Focusing] {description}: {hour_part}h {minute_part}'")
+    else:
+        print(f"· ⌛ {description}: {hour_part}h {minute_part}'")
 
 
 if __name__ == "__main__":

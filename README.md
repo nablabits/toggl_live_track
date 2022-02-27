@@ -15,3 +15,8 @@ If you find it interesting and want to give a go, just:
 Depending the global installation on your computer you might not even need a virtual environment (just `requests` is needed out from the standard library)
 
 That easy!
+
+## Deep work tag
+If you are a fan of deep work like me, you might find useful assigning a deep work tag to your entries (chances are you are already using one). You can define the name of that tag in the beginning of the file that in turn will add a focusing label to your entry on the top panel. Again, a picture is worth a thousand words:
+
+![img](ac5720e1022a76d52e6c631e9be03570.png)

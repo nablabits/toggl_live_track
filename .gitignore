@@ -2,6 +2,9 @@
 venv/
 .env
 
+# python
+__pycache__
+
 # vim
 tags
 *.vim
