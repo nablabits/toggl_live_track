@@ -3,7 +3,10 @@ from datetime import datetime, timezone
 
 import requests
 
-DEEP_WORK_TAG = "Deep Work"
+DEEP_WORK_TAG = "dw_set"
+DASH_TAGS = (
+    "dash10", "dash20", "dash30", "dash60",
+)
 
 
 def get_data():
@@ -50,10 +53,13 @@ def run():
 
     # Classify the entry as deep work
     tags = data.get("tags", list())
+    display = f"·  {description}: {hour_part}h {minute_part}'"
     if DEEP_WORK_TAG in tags:
-        print(f"· [🎯 Focusing] {description}: {hour_part}h {minute_part}'")
-    else:
-        print(f"· ⌛ {description}: {hour_part}h {minute_part}'")
+        display += " [🎯 DEEP]"
+    for dash_tag in DASH_TAGS:
+        if dash_tag in tags:
+            display += f" [{dash_tag}]".upper()
+    print(display)
 
 
 if __name__ == "__main__":
