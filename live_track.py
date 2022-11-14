@@ -3,10 +3,11 @@ from datetime import datetime, timezone
 
 import requests
 
-DEEP_WORK_TAG = "dw_set"
+DEEP_WORK_TAG = "Deep Work"
 DASH_TAGS = (
-    "dash10", "dash20", "dash30", "dash60",
+    "dash10", "dash20", "dash30", "dash60", "dash90"
 )
+BURST_TAG = "burst"
 
 
 def get_data():
@@ -56,9 +57,11 @@ def run():
     display = f"·  {description}: {hour_part}h {minute_part}'"
     if DEEP_WORK_TAG in tags:
         display += " [🎯 DEEP]"
+    if BURST_TAG in tags:
+        display += " [🔥 BURST]"
     for dash_tag in DASH_TAGS:
         if dash_tag in tags:
-            display += f" [{dash_tag}]".upper()
+            display += f" [💫 {dash_tag}]".upper()
     print(display)
 
 
