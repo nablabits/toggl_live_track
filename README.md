@@ -1,6 +1,6 @@
-# Toggle Live Track
+# Toggl Live Track
 
-Toggle live track is a small script that I use in combination with [executor](https://github.com/raujonas/executor) gnome shell extension to display the current time entry in the top bar. That let me be more time aware whenever I'm working with the computer.
+Toggl live track is a small script that I use in combination with [executor](https://github.com/raujonas/executor) gnome shell extension to display the current time entry running on [Toggl](https://track.toggl.com/timer) in the top bar. That let me be more time aware whenever I'm working with the computer.
 
 An image is worth a thousand words (except if you take a photo of a text with more than 1000 words, of course)
 ![img](0415dc7df96de4f19273b8db773ed3d0.png)
