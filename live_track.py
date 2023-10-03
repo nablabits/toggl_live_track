@@ -36,6 +36,22 @@ def elapsed(start):
     return hour_part, minute_part
 
 
+def shorten_string(input_string, max_length=50):
+    if len(input_string) <= max_length:
+        return input_string
+
+    # Calculate the length of the portion to keep from the start and end.
+    keep_length = (max_length - 3) // 2
+
+    # Extract the start and end portions of the string
+    start_part = input_string[:keep_length]
+    end_part = input_string[-keep_length:]
+
+    # Combine the start, ellipsis, and end parts
+    shortened_string = f"{start_part} [...] {end_part}"
+    return shortened_string
+
+
 def run():
     """Main entry point."""
     data = get_data()
@@ -44,6 +60,9 @@ def run():
         return
     start = data["start"]
     description = data.get("description", "No description")
+
+    # Shorten it
+    description = shorten_string(description)
 
     # Calculate elapsed time
     hour_part, minute_part = elapsed(start)
