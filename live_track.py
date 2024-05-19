@@ -20,10 +20,10 @@ def get_data():
         "user_agent": USER_AGENT,
         "workspace_id": WORKSPACE_ID,
     }
-    url = "https://api.track.toggl.com/api/v8/time_entries/current"
+    url = "https://api.track.toggl.com/api/v9/me/time_entries/current"
     response = requests.get(url, params=params, auth=auth)
     json = response.json()
-    return json["data"]
+    return json
 
 
 def elapsed(start):
